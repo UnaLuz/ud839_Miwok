@@ -15,8 +15,12 @@
  */
 package com.example.android.miwok;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
 
@@ -24,5 +28,23 @@ public class FamilyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family);
+
+        ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("one", "lutti", R.mipmap.ic_launcher));
+        words.add(new Word("two", "otiiko", R.mipmap.ic_launcher));
+        words.add(new Word("three", "tolookosu", R.mipmap.ic_launcher));
+        words.add(new Word("four", "oyyisa", R.mipmap.ic_launcher));
+        words.add(new Word("five", "massokka", R.mipmap.ic_launcher));
+        words.add(new Word("six", "temmokka", R.mipmap.ic_launcher));
+        words.add(new Word("seven", "kenekaku", R.mipmap.ic_launcher));
+        words.add(new Word("eight", "kawinta", R.mipmap.ic_launcher));
+        words.add(new Word("nine", "wo'e", R.mipmap.ic_launcher));
+        words.add(new Word("ten", "na'aacha", R.mipmap.ic_launcher));
+
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
+
+        ListView listView = findViewById(R.id.root_family_list_view);
+
+        listView.setAdapter(itemsAdapter);
     }
 }
