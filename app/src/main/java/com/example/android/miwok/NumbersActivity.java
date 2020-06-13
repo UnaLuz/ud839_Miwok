@@ -30,16 +30,16 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("one", "lutti", R.mipmap.ic_launcher));
-        words.add(new Word("two", "otiiko", R.mipmap.ic_launcher));
-        words.add(new Word("three", "tolookosu", R.mipmap.ic_launcher));
-        words.add(new Word("four", "oyyisa", R.mipmap.ic_launcher));
-        words.add(new Word("five", "massokka", R.mipmap.ic_launcher));
-        words.add(new Word("six", "temmokka", R.mipmap.ic_launcher));
-        words.add(new Word("seven", "kenekaku", R.mipmap.ic_launcher));
-        words.add(new Word("eight", "kawinta", R.mipmap.ic_launcher));
-        words.add(new Word("nine", "wo'e", R.mipmap.ic_launcher));
-        words.add(new Word("ten", "na'aacha", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.one), "lutti", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.two), "otiiko", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.three), "tolookosu", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.four), "oyyisa", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.five), "massokka", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.six), "temmokka", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.seven), "kenekaku", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.eight), "kawinta", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.nine), "wo'e", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.ten), "na'aacha", R.mipmap.ic_launcher));
 
         WordAdapter itemsAdapter = new WordAdapter(this, words);
 
