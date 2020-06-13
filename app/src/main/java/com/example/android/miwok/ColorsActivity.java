@@ -30,16 +30,14 @@ public class ColorsActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word("one", "lutti", R.mipmap.ic_launcher));
-        words.add(new Word("two", "otiiko", R.mipmap.ic_launcher));
-        words.add(new Word("three", "tolookosu", R.mipmap.ic_launcher));
-        words.add(new Word("four", "oyyisa", R.mipmap.ic_launcher));
-        words.add(new Word("five", "massokka", R.mipmap.ic_launcher));
-        words.add(new Word("six", "temmokka", R.mipmap.ic_launcher));
-        words.add(new Word("seven", "kenekaku", R.mipmap.ic_launcher));
-        words.add(new Word("eight", "kawinta", R.mipmap.ic_launcher));
-        words.add(new Word("nine", "wo'e", R.mipmap.ic_launcher));
-        words.add(new Word("ten", "na'aacha", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.red), "weṭeṭṭi", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.green), "chokokki", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.brown), "ṭakaakki", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.gray), "ṭopoppi", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.black), "kululli", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.white), "kelelli", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.dusty_yellow), "ṭopiisә", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.mustard_yellow), "chiwiiṭә", R.mipmap.ic_launcher));
 
         WordAdapter itemsAdapter = new WordAdapter(this, words);
 

@@ -30,16 +30,16 @@ public class FamilyActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word("one", "lutti", R.mipmap.ic_launcher));
-        words.add(new Word("two", "otiiko", R.mipmap.ic_launcher));
-        words.add(new Word("three", "tolookosu", R.mipmap.ic_launcher));
-        words.add(new Word("four", "oyyisa", R.mipmap.ic_launcher));
-        words.add(new Word("five", "massokka", R.mipmap.ic_launcher));
-        words.add(new Word("six", "temmokka", R.mipmap.ic_launcher));
-        words.add(new Word("seven", "kenekaku", R.mipmap.ic_launcher));
-        words.add(new Word("eight", "kawinta", R.mipmap.ic_launcher));
-        words.add(new Word("nine", "wo'e", R.mipmap.ic_launcher));
-        words.add(new Word("ten", "na'aacha", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.father), "әpә", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.mother), "әṭa", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.son), "angsi", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.daughter), "tune", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.older_brother), "taachi", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.younger_brother), "chalitti", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.older_sister), "teṭe", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.younger_sister), "kolliti", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.grandmother), "ama", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.grandfather), "paapa", R.mipmap.ic_launcher));
 
         WordAdapter itemsAdapter = new WordAdapter(this, words);
 
