@@ -10,7 +10,7 @@
         android:layout_height="88dp"
         android:layout_gravity="center_vertical"
         android:background="@color/tan_background"
-        android:contentDescription="@string/image"/>
+        android:contentDescription="@string/image" />
 
     <LinearLayout
         android:id="@+id/text_container"

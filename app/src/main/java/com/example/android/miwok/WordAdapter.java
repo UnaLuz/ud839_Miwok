@@ -33,11 +33,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         // Find the TextView in the list_item.xml layout with the ID image_view
         ImageView imageView = listItemView.findViewById(R.id.image_view);
-        if(currentWord.getImageResource() != -1){
+        if (currentWord.getImageResource() != -1) {
             // Get the corresponding image resource and set it in the image view of the list
             imageView.setImageResource(currentWord.getImageResource());
-        }
-        else {
+        } else {
             imageView.setVisibility(View.GONE);
         }
 
@@ -55,7 +54,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View textContainer = listItemView.findViewById(R.id.text_container);
         // Set it's background color to mBgColorRes
         textContainer.setBackgroundResource(mBgColorResId);
-
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

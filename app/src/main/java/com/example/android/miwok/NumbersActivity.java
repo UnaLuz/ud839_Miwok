@@ -31,7 +31,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<>();
         words.add(new Word(getString(R.string.one), "lutti", R.drawable.number_one));
-        words.add(new Word(getString(R.string.two), "otiiko",R.drawable.number_two));
+        words.add(new Word(getString(R.string.two), "otiiko", R.drawable.number_two));
         words.add(new Word(getString(R.string.three), "tolookosu", R.drawable.number_three));
         words.add(new Word(getString(R.string.four), "oyyisa", R.drawable.number_four));
         words.add(new Word(getString(R.string.five), "massokka", R.drawable.number_five));
