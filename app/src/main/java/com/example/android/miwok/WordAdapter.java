@@ -11,8 +11,12 @@ import android.widget.TextView;
 import java.util.List;
 
 public class WordAdapter extends ArrayAdapter<Word> {
-    public WordAdapter(Context context, List<Word> objects) {
+
+    private int mBgColorResId;
+
+    public WordAdapter(Context context, List<Word> objects, int bgColor) {
         super(context, 0, objects);
+        mBgColorResId = bgColor;
     }
 
     @Override
@@ -46,6 +50,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView defaultTextView = listItemView.findViewById(R.id.default_word_text_view);
         // Get the corresponding default translation and set it in the text view of the list
         defaultTextView.setText(currentWord.getDefaultWord());
+
+        // Get the view that contains both text views in the list item
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        // Set it's background color to mBgColorRes
+        textContainer.setBackgroundResource(mBgColorResId);
+
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
