@@ -32,7 +32,7 @@ public class PhrasesActivity extends AppCompatActivity {
         ArrayList<Word> words = new ArrayList<>();
         words.add(new Word(getString(R.string.where_are_you_going), "minto wuksus"));
         words.add(new Word(getString(R.string.what_is_your_name), "tinnә oyaase'nә"));
-        words.add(new Word(getString(R.string.my_name_is), "oyaaset..."));
+        words.add(new Word(getString(R.string.my_name_is), "oyaaset…"));
         words.add(new Word(getString(R.string.how_are_you_feeling), "michәksәs?"));
         words.add(new Word(getString(R.string.im_feeling_good), "kuchi achit"));
         words.add(new Word(getString(R.string.are_you_coming), "әәnәs'aa?"));
