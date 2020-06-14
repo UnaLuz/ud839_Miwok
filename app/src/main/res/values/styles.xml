@@ -43,7 +43,8 @@
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
-    <!-- Base application theme in landscape mode -->
+    <!--
+    <!- Base application theme in landscape mode ->
     <style name="LandscapeCategoryStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/list_item_height_landscape</item>
@@ -53,5 +54,6 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
+    -->
 
 </resources>
