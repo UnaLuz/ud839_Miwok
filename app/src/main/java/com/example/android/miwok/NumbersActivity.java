@@ -30,16 +30,16 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word(getString(R.string.one), "lutti", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.two), "otiiko", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.three), "tolookosu", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.four), "oyyisa", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.five), "massokka", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.six), "temmokka", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.seven), "kenekaku", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.eight), "kawinta", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.nine), "wo'e", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.ten), "na'aacha", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.one), "lutti", R.drawable.number_one));
+        words.add(new Word(getString(R.string.two), "otiiko",R.drawable.number_two));
+        words.add(new Word(getString(R.string.three), "tolookosu", R.drawable.number_three));
+        words.add(new Word(getString(R.string.four), "oyyisa", R.drawable.number_four));
+        words.add(new Word(getString(R.string.five), "massokka", R.drawable.number_five));
+        words.add(new Word(getString(R.string.six), "temmokka", R.drawable.number_six));
+        words.add(new Word(getString(R.string.seven), "kenekaku", R.drawable.number_seven));
+        words.add(new Word(getString(R.string.eight), "kawinta", R.drawable.number_eight));
+        words.add(new Word(getString(R.string.nine), "wo'e", R.drawable.number_nine));
+        words.add(new Word(getString(R.string.ten), "na'aacha", R.drawable.number_ten));
 
         WordAdapter itemsAdapter = new WordAdapter(this, words);
 
