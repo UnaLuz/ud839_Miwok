@@ -30,16 +30,16 @@ public class FamilyActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word(getString(R.string.father), "әpә", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.mother), "әṭa", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.son), "angsi", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.daughter), "tune", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.older_brother), "taachi", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.younger_brother), "chalitti", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.older_sister), "teṭe", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.younger_sister), "kolliti", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.grandmother), "ama", R.mipmap.ic_launcher));
-        words.add(new Word(getString(R.string.grandfather), "paapa", R.mipmap.ic_launcher));
+        words.add(new Word(getString(R.string.father), "әpә", R.drawable.family_father));
+        words.add(new Word(getString(R.string.mother), "әṭa", R.drawable.family_mother));
+        words.add(new Word(getString(R.string.son), "angsi", R.drawable.family_son));
+        words.add(new Word(getString(R.string.daughter), "tune", R.drawable.family_daughter));
+        words.add(new Word(getString(R.string.older_brother), "taachi", R.drawable.family_older_brother));
+        words.add(new Word(getString(R.string.younger_brother), "chalitti", R.drawable.family_younger_brother));
+        words.add(new Word(getString(R.string.older_sister), "teṭe", R.drawable.family_older_sister));
+        words.add(new Word(getString(R.string.younger_sister), "kolliti", R.drawable.family_younger_sister));
+        words.add(new Word(getString(R.string.grandmother), "ama", R.drawable.family_grandmother));
+        words.add(new Word(getString(R.string.grandfather), "paapa", R.drawable.family_grandfather));
 
         WordAdapter itemsAdapter = new WordAdapter(this, words);
 

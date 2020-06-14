@@ -39,6 +39,8 @@
     <string name="eight">eight</string>
     <string name="nine">nine</string>
     <string name="ten">ten</string>
+
+    <!-- Default colors [CHAR LIMIT=20] -->
     <string name="red">red</string>
     <string name="green">green</string>
     <string name="brown">brown</string>
@@ -47,6 +49,8 @@
     <string name="white">white</string>
     <string name="dusty_yellow">dusty yellow</string>
     <string name="mustard_yellow">mustard yellow</string>
+
+    <!-- Default family members [CHAR LIMIT=30] -->
     <string name="father">father</string>
     <string name="mother">mother</string>
     <string name="son">son</string>
@@ -57,6 +61,8 @@
     <string name="younger_sister">younger sister</string>
     <string name="grandmother">grandmother</string>
     <string name="grandfather">grandfather</string>
+
+    <!-- Default phrases [CHAR LIMIT=50] -->
     <string name="where_are_you_going">Where are you going?</string>
     <string name="what_is_your_name">What is your name?</string>
     <string name="my_name_is">My name is…</string>
@@ -67,5 +73,7 @@
     <string name="im_coming">I\'m coming.</string>
     <string name="lets_go">Let\'s go.</string>
     <string name="come_here">Come here.</string>
-    <string name="accorn">Accorn</string>
+
+    <!-- Image description -->
+    <string name="image">Image</string>
 </resources>
