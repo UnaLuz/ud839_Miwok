@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Category name for phrases [CHAR LIMIT=20] -->
+    <string name="category_phrases">Frases</string>
+
+    <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
+    <string name="category_colors">Colores</string>
+
+    <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
+    <string name="category_numbers">Numeros</string>
+
+    <!-- Category name for the vocabulary words for family members [CHAR LIMIT=30] -->
+    <string name="category_family">Miembros de la familia</string>
+
+    <!-- Default numbers [CHAR LIMIT=20] -->
+    <string name="one">uno</string>
+    <string name="two">dos</string>
+    <string name="three">tres</string>
+    <string name="four">cuatro</string>
+    <string name="five">cinco</string>
+    <string name="six">seis</string>
+    <string name="seven">siete</string>
+    <string name="eight">ocho</string>
+    <string name="nine">nueve</string>
+    <string name="ten">diez</string>
+
+    <!-- Default colors [CHAR LIMIT=20] -->
+    <string name="red">rojo</string>
+    <string name="green">verde</string>
+    <string name="brown">marrón</string>
+    <string name="gray">gris</string>
+    <string name="black">negro</string>
+    <string name="white">blanco</string>
+    <string name="dusty_yellow">amarillo terroso</string>
+    <string name="mustard_yellow">amarillo mostaza</string>
+
+    <!-- Default family members [CHAR LIMIT=30] -->
+    <string name="father">padre</string>
+    <string name="mother">madre</string>
+    <string name="son">hijo</string>
+    <string name="daughter">hija</string>
+    <string name="older_brother">hermano mayor</string>
+    <string name="younger_brother">hermano menor</string>
+    <string name="older_sister">hermana mayor</string>
+    <string name="younger_sister">hermana menor</string>
+    <string name="grandmother">abuela</string>
+    <string name="grandfather">abuelo</string>
+
+    <!-- Default phrases [CHAR LIMIT=50] -->
+    <string name="where_are_you_going">¿Cómo estás?</string>
+    <string name="what_is_your_name">¿Cuál es tu nombre?</string>
+    <string name="my_name_is">Mi nombre es…</string>
+    <string name="how_are_you_feeling">¿Cómo te sientes?</string>
+    <string name="im_feeling_good">Me siento bien.</string>
+    <string name="are_you_coming">¿Vienes?</string>
+    <string name="yes_im_coming">Si, estoy yendo.</string>
+    <string name="im_coming">Estoy yendo.</string>
+    <string name="lets_go">Vamos.</string>
+    <string name="come_here">Ven aquí.</string>
+
+    <!-- Image description -->
+    <string name="image">Imagen</string>
+</resources>
