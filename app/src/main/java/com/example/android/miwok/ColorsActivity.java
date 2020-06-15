@@ -29,6 +29,19 @@ public class ColorsActivity extends AppCompatActivity {
 
     protected MediaPlayer mMediaPlayer;
 
+    /**
+     * This method is called when the audio finished
+     */
+    // Made a global variable so that I don't create a new object every single time I want
+    //to release resources
+    private MediaPlayer.OnCompletionListener mOnCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            mp.stop();
+            releaseMediaPlayer();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,22 +73,18 @@ public class ColorsActivity extends AppCompatActivity {
                 // Release the media player in case it wasn't before creating a new one
                 releaseMediaPlayer();
 
-                // Create and start a new media player with the corresponding audio
-                mMediaPlayer = MediaPlayer.create(ColorsActivity.this,
-                        itemsAdapter.getItem(position).getAudioResource());
+                Word item = itemsAdapter.getItem(position);
+                if (item != null) {
+                    // Create and start a new media player with the corresponding audio
+                    mMediaPlayer = MediaPlayer.create(ColorsActivity.this, item.getAudioResource());
+                }
 
                 // Checking if getting the audio resource was successful
                 if (mMediaPlayer != null) {
                     mMediaPlayer.start();
 
-                    // Call the release method once the audio stopped
-                    mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            mp.stop();
-                            releaseMediaPlayer();
-                        }
-                    });
+                    // Call the global method to release the resources
+                    mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
                 }
             }
         });
@@ -96,5 +105,11 @@ public class ColorsActivity extends AppCompatActivity {
             // is not configured to play an audio file at the moment.
             mMediaPlayer = null;
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 }

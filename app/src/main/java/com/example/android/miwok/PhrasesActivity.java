@@ -27,7 +27,23 @@ import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
+    /**
+     * Handles playback for all the audio files
+     */
     protected MediaPlayer mMediaPlayer;
+
+    /**
+     * This method is called when the audio finished
+     */
+    // Made a global variable so that I don't create a new object every single time I want
+    //to release resources
+    private MediaPlayer.OnCompletionListener mOnCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            mp.stop();
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,30 +78,24 @@ public class PhrasesActivity extends AppCompatActivity {
                 // Release the media player in case it wasn't before creating a new one
                 releaseMediaPlayer();
 
-                // Create and start a new media player with the corresponding audio
-                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this,
-                        itemsAdapter.getItem(position).getAudioResource());
+                Word item = itemsAdapter.getItem(position);
+                if (item != null) {
+                    // Create and start a new media player with the corresponding audio
+                    mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, item.getAudioResource());
+                }
 
                 // Checking if getting the audio resource was successful
                 if (mMediaPlayer != null) {
                     mMediaPlayer.start();
 
-                    // Call the release method once the audio stopped
-                    mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            mp.stop();
-                            releaseMediaPlayer();
-                        }
-                    });
+                    // Call the global method to release the resources
+                    mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
                 }
             }
         });
     }
 
-    /**
-     * Clean up the media player by releasing its resources.
-     */
+    /** Clean up the media player by releasing its resources. */
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
@@ -98,5 +108,11 @@ public class PhrasesActivity extends AppCompatActivity {
             // is not configured to play an audio file at the moment.
             mMediaPlayer = null;
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 }
