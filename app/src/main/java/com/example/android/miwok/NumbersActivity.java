@@ -15,7 +15,10 @@
  */
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,22 +33,35 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word(getString(R.string.one), "lutti", R.drawable.number_one));
-        words.add(new Word(getString(R.string.two), "otiiko", R.drawable.number_two));
-        words.add(new Word(getString(R.string.three), "tolookosu", R.drawable.number_three));
-        words.add(new Word(getString(R.string.four), "oyyisa", R.drawable.number_four));
-        words.add(new Word(getString(R.string.five), "massokka", R.drawable.number_five));
-        words.add(new Word(getString(R.string.six), "temmokka", R.drawable.number_six));
-        words.add(new Word(getString(R.string.seven), "kenekaku", R.drawable.number_seven));
-        words.add(new Word(getString(R.string.eight), "kawinta", R.drawable.number_eight));
-        words.add(new Word(getString(R.string.nine), "wo'e", R.drawable.number_nine));
-        words.add(new Word(getString(R.string.ten), "na'aacha", R.drawable.number_ten));
+        words.add(new Word(getString(R.string.one), "lutti", R.drawable.number_one, R.raw.number_one));
+        words.add(new Word(getString(R.string.two), "otiiko", R.drawable.number_two, R.raw.number_two));
+        words.add(new Word(getString(R.string.three), "tolookosu", R.drawable.number_three, R.raw.number_three));
+        words.add(new Word(getString(R.string.four), "oyyisa", R.drawable.number_four, R.raw.number_four));
+        words.add(new Word(getString(R.string.five), "massokka", R.drawable.number_five, R.raw.number_five));
+        words.add(new Word(getString(R.string.six), "temmokka", R.drawable.number_six, R.raw.number_six));
+        words.add(new Word(getString(R.string.seven), "kenekaku", R.drawable.number_seven, R.raw.number_seven));
+        words.add(new Word(getString(R.string.eight), "kawinta", R.drawable.number_eight, R.raw.number_eight));
+        words.add(new Word(getString(R.string.nine), "wo'e", R.drawable.number_nine, R.raw.number_nine));
+        words.add(new Word(getString(R.string.ten), "na'aacha", R.drawable.number_ten, R.raw.number_ten));
 
-        WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_numbers);
-
+        // Make the adapter for the word items
+        final WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_numbers);
+        // Find the root view of the list
         ListView listView = findViewById(R.id.root_list_view);
-
+        // Add adapter to the root list view
         listView.setAdapter(itemsAdapter);
-    }
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * Create the mediaPlayer with the corresponding audio file
+             * that will play when the item view is clicked
+             */
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MediaPlayer mediaPlayer = MediaPlayer.create(NumbersActivity.this,
+                        itemsAdapter.getItem(position).getAudioResource());
+                mediaPlayer.start();
+            }
+        });
+    }
 }

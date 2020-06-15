@@ -8,22 +8,25 @@ public class Word {
     private String mDefaultWord;
     private String mMiwokWord;
     private int mImageResourceId = NO_IMAGE;
+    private int mAudioResourceId;
 
     /**
      * Receives the default translation and the miwok word
      */
-    public Word(String defWord, String miwWord) {
+    public Word(String defWord, String miwWord, int audioResId) {
         mDefaultWord = defWord;
         mMiwokWord = miwWord;
+        mAudioResourceId = audioResId;
     }
 
     /**
      * Receives the default translation and the miwok word
      */
-    public Word(String defWord, String miwWord, int resId) {
+    public Word(String defWord, String miwWord, int imgResId, int audioResId) {
         mDefaultWord = defWord;
         mMiwokWord = miwWord;
-        mImageResourceId = resId;
+        mImageResourceId = imgResId;
+        mAudioResourceId = audioResId;
     }
 
     /**
@@ -45,6 +48,13 @@ public class Word {
      */
     public int getImageResource() {
         return mImageResourceId;
+    }
+
+    /**
+     * @return the audio resource of the miwok word
+     */
+    public int getAudioResource() {
+        return mAudioResourceId;
     }
 
 }
