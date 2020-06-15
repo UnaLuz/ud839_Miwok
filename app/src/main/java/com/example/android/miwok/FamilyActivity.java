@@ -50,6 +50,7 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
+        // Set a listener so that when the audio finishes we release resources
         mOnCompletionListener = new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -57,8 +58,13 @@ public class FamilyActivity extends AppCompatActivity {
             }
         };
 
+        // Create an instance of the audio manager
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
+        /* This method will be called when there is a change in the audio focus
+         * If we gain audio focus back, resume the audio
+         * If we completely loose the audio focus, release resources
+         * If we are requested to stop for a short amount of time, pause the audio */
         AudioManager.OnAudioFocusChangeListener audioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
             @Override
             public void onAudioFocusChange(int focusChange) {
@@ -84,6 +90,8 @@ public class FamilyActivity extends AppCompatActivity {
                 .setUsage(AudioAttributesCompat.USAGE_MEDIA)
                 .build();
 
+        //The app needs to play a short audio file, so we will request audio focus
+        // with a short amount of time with AUDIOFOCUS_GAIN_TRANSIENT.
         mAudioFocusRequest = new AudioFocusRequestCompat
                 .Builder(AudioManagerCompat.AUDIOFOCUS_GAIN_TRANSIENT)
                 .setAudioAttributes(audioAttributes)
@@ -119,15 +127,14 @@ public class FamilyActivity extends AppCompatActivity {
                 // Release the media player in case it wasn't before creating a new one
                 releaseMediaPlayer();
 
-                // Request audio focus so in order to play the audio file. The app needs to play a
-                // short audio file, so we will request audio focus with a short amount of time
-                // with AUDIOFOCUS_GAIN_TRANSIENT.
+                // Request audio focus so in order to play the audio file and store the result
+                // of the request
                 int result = AudioManagerCompat.requestAudioFocus(
                         mAudioManager,
                         mAudioFocusRequest);
 
 
-                // Checking if getting the audio resource was successful
+                // Checking we were granted audio focus successfully
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     // Create and setup the {@link MediaPlayer} for the audio resource associated
                     // with the current word
