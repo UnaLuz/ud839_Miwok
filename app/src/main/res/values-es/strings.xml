@@ -60,4 +60,5 @@
 
     <!-- Image description -->
     <string name="image">Imagen</string>
+    <string name="play_icon">Icono Play</string>
 </resources>

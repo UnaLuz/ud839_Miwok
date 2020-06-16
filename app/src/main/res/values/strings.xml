@@ -75,5 +75,6 @@
     <string name="come_here">Come here.</string>
 
     <!-- Image description -->
-    <string name="image">Image</string>
+    <string name="image">Image representing the text on the right</string>
+    <string name="play_icon">Play icon</string>
 </resources>
